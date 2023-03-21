@@ -1,13 +1,14 @@
 #include "main.h"
 /**
- * main : main function 
- * _putchar : prints the alphabets of th word 'putchar'
- * return : always 0
- */
+* main : prints _putchar 
+* followed by ney line
+* _putchar : prints the alphabets of th word 'putchar'
+* return : always 0
+*/
 
 
 int main(void)
-{ 
+{
 _putchar('_');
 _putchar('p');
 _putchar('u');
