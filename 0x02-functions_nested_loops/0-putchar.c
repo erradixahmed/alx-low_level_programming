@@ -1,9 +1,9 @@
 #include "main.h"
 /**
-* main : prints _putchar
+* main : Prints _putchar
 * followed by ney line
 * _putchar : prints the alphabets of th word 'putchar'
-* return : always 0
+* Return : always 0
 */
 
 
