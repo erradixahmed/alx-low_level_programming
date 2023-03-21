@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* main : prints _putchar 
+* main : prints _putchar
 * followed by ney line
 * _putchar : prints the alphabets of th word 'putchar'
 * return : always 0
@@ -19,4 +19,4 @@ _putchar('a');
 _putchar('r');
 _putchar('\n');
 return (0);
-}	
+}
