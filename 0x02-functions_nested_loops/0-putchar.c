@@ -1,22 +1,20 @@
 #include "main.h"
 /**
-* main : Prints _putchar
-* followed by ney line
-* _putchar : prints the alphabets of th word 'putchar'
-* Return : always 0
-*/
-
+ * main: Prints _putchar
+ *
+ * Return: return 0
+ */
 
 int main(void)
 {
-_putchar('_');
-_putchar('p');
-_putchar('u');
-_putchar('t');
-_putchar('c');
-_putchar('h');
-_putchar('a');
-_putchar('r');
-_putchar('\n');
-return (0);
+	_putchar('_');
+	_putchar('p');
+	_putchar('u');
+	_putchar('t');
+	_putchar('c');
+	_putchar('h');
+	_putchar('a');
+	_putchar('r');
+	_putchar('\n');
+	return (0);
 }
