@@ -1,18 +1,17 @@
 #include "main.h"
+
 /**
- * print_alphabet - print the alphabet in lower case
+ * print_alphabet - program that prints the alphabets in lower case
  * Return: 0
  */
 
 void print_alphabet(void)
 {
-	int z;
+	char c;
 
-	z = 122;
-	while (z >= 97)
+	for (c = 'a'; c <= 'z'; c++)
 	{
-		_putchar(z);
-		z = z - 1;
+		_putchar(c);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
