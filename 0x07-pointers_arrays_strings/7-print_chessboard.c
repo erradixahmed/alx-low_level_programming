@@ -8,13 +8,13 @@
  */
 void print_chessboard(char (*a)[8])
 {
-	int a;
-	int b;
+	int x;
+	int v;
 
-	for (a = 0; a < 8; a++)
+	for (x = 0; x < 8; x++)
 	{
-		for (b = 0; b < 8; b++)
-			_putchar(a[a][b]);
+		for (v = 0; v < 8; v++)
+			_putchar(a[x][v]);
 		_putchar('\n');
 	}
 }
