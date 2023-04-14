@@ -12,19 +12,18 @@
  */
 int *array_range(int min, int max)
 {
-	int i, *array;
+    int *array, i;
 
-	if (min > max)
-		return (NULL);
+    if (min > max)
+        return (NULL);
 
-	array = _calloc(max - min + 1, sizeof(int));
-	if (array == NULL)
-		return (NULL);
+    array = _calloc(max - min + 1, sizeof(int));
+    if (array == NULL)
+        return (NULL);
 
-	for (i = 0; min <= max; i++)
-	{
-		array[i] = min;
-		min++;
-	}
-	return (array);
+    for (i = 0; i < max - min + 1; i++)
+    {
+        array[i] = min + i;
+    }
+    return (array);
 }
