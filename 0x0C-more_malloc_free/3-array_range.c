@@ -3,28 +3,28 @@
 
 /**
  * array_range - creates an array of integers
- * @min: minimum value (included)
- * @max: maximum value (included)
  *
- * Return: pointer to the newly created array
- *         or NULL if min > max or if malloc fails
+ * @min: min number of elements
+ * @max: max number of elements
+ *
+ * Return: array pointer address
+ *         NULL if it fails
  */
 int *array_range(int min, int max)
 {
-    int *array;
-    int i, len;
+	int i, *array;
 
-    if (min > max)
-        return (NULL);
+	if (min > max)
+		return (NULL);
 
-    len = max - min + 1;
-    array = _calloc(len, sizeof(int));
+	array = _calloc(max - min + 1, sizeof(int));
+	if (array == NULL)
+		return (NULL);
 
-    if (array == NULL)
-        return (NULL);
-
-    for (i = 0; i < len; i++)
-        array[i] = min + i;
-
-    return (array);
+	for (i = 0; min <= max; i++)
+	{
+		array[i] = min;
+		min++;
+	}
+	return (array);
 }
