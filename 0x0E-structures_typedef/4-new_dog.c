@@ -1,42 +1,90 @@
+#include "dog.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
- * _strlen - returns the length of a string
- * @s: string to evaluate
+ * _strlen - Returns the length of a string.
+ * @s: String to evaluate.
  *
- * Return: the length of the string
+ * Return: The length of the string.
  */
-int _strlen(char *s)
+size_t _strlen(const char *s)
 {
-	int len = 0;
-	
-	while (*s != '\0')
-	{
+	size_t len = 0;
+
+	while (*s++)
 		len++;
-		s++;
-	}
 
 	return (len);
 }
 
 /**
- * _strcpy - copies the string pointed to by src
- * including the terminating null byte (\0)
- * to the buffer pointed to by dest
- * @dest: pointer to the buffer in which we copy the string
- * @src: string to be copied
+ * _strdup - Returns a pointer to a newly allocated space in memory,
+ * which contains a copy of the string given as a parameter.
+ * @str: String to copy.
  *
- * Return: the pointer to dest
+ * Return: On success, returns a pointer to the duplicated string.
+ * On failure, returns NULL.
  */
-char *_strcpy(char *dest, char *src)
+char *_strdup(const char *str)
 {
-	char *dest_orig = dest;
+	char *dup;
+	size_t len = 0;
 
-	while (*src != '\0')
+	if (str == NULL)
+		return (NULL);
+
+	len = _strlen(str) + 1;
+	dup = malloc(len * sizeof(char));
+	if (dup == NULL)
+		return (NULL);
+
+	while (*str)
+		*dup++ = *str++;
+
+	*dup = '\0';
+
+	return (dup - len + 1);
+}
+
+/**
+ * new_dog - Creates a new dog.
+ * @name: Name of the dog.
+ * @age: Age of the dog.
+ * @owner: Owner of the dog.
+ *
+ * Return: On success, returns a pointer to the new dog. Otherwise, returns NULL.
+ */
+dog_t *new_dog(char *name, float age, char *owner)
+{
+	dog_t *new_dog;
+	char *name_copy, *owner_copy;
+
+	if (name == NULL || owner == NULL)
+		return (NULL);
+
+	new_dog = malloc(sizeof(dog_t));
+	if (new_dog == NULL)
+		return (NULL);
+
+	name_copy = _strdup(name);
+	if (name_copy == NULL)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		free(new_dog);
+		return (NULL);
 	}
-	*dest = '\0';
 
-	return (dest_orig);
+	owner_copy = _strdup(owner);
+	if (owner_copy == NULL)
+	{
+		free(name_copy);
+		free(new_dog);
+		return (NULL);
+	}
+
+	new_dog->name = name_copy;
+	new_dog->age = age;
+	new_dog->owner = owner_copy;
+
+	return (new_dog);
 }
