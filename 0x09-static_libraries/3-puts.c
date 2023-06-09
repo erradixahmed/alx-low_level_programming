@@ -1,13 +1,24 @@
-#include "main.h"
-#include<stdio.h>
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
+#include "holberton.h"
 
-int main(void)
+/**
+ * _puts - print a string
+ *
+ * @str: string pointer
+ *
+ * Return: nothing
+*/
+
+void _puts(char *str)
 {
-	puts("\"Programming is like building a multilingual puzzle");
-	return (0);
+	int i;
+
+	for (i = 0; str[i] >= 0; i++)
+	{
+		if (str[i] == '\0')
+		{
+			_putchar('\n');
+			break;
+		}
+		_putchar(str[i]);
+	}
 }
